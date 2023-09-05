@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+    </style>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gitfolio! - Home</title>
@@ -9,44 +14,158 @@
   <body>
     <div class="bento-grid">
       <div class="sidebar">
-        <p>Logo</p>
+        <div>
+          <p class="gitfolio">Gitfolio</p>
+          <ul>
+            <li>
+              <ion-icon name="home" size="large"></ion-icon>
+              <p>Home</p>
+            </li>
+            <li>
+              <ion-icon name="person" size="large"></ion-icon>
+              <p>Profile</p>
+            </li>
+            <li>
+              <ion-icon name="paper-plane" size="large"></ion-icon>
+              <p>Messages</p>
+            </li>
+            <li>
+              <ion-icon name="time" size="large"></ion-icon>
+              <p>History</p>
+            </li>
+            <li>
+              <ion-icon name="people" size="large"></ion-icon>
+              <p>Communities</p>
+            </li>
+          </ul>
+        </div>
         <ul>
-          <li><ion-icon name="home"></ion-icon>Home</li>
-          <li><ion-icon name="person"></ion-icon>Profile</li>
-          <li><ion-icon name="paper-plane"></ion-icon>Messages</li>
-          <li><ion-icon name="time"></ion-icon>History</li>
-          <li><ion-icon name="newspaper"></ion-icon>Tasks</li>
-          <li><ion-icon name="people"></ion-icon>Communities</li>
-        </ul>
-        <ul>
-          <li><ion-icon name="people"></ion-icon>Settings</li>
-          <li><ion-icon name="information-circle"></ion-icon>Support</li>
-          <li><ion-icon name="eye"></ion-icon>Privacy</li>
+          <li>
+            <ion-icon name="settings" size="large"></ion-icon>
+            <p>Settings</p>
+          </li>
+          <li>
+            <ion-icon name="information-circle" size="large"></ion-icon>
+            <p>Support</p>
+          </li>
+          <li>
+            <ion-icon name="eye" size="large"></ion-icon>
+            <p>Privacy</p>
+          </li>
         </ul>
       </div>
 
       <div class="header">
         <div class="search-header">
-          <div class="search"><ion-icon name="search"></ion-icon></div>
+          <div class="search">
+            <ion-icon name="search" class="search-icon"></ion-icon>
+            <p>Search topics...</p>
+          </div>
+          <ion-icon name="moon" class="light-mode"></ion-icon>
           <ion-icon name="notifications"></ion-icon>
-          <div class="profile-icon"><ion-icon name="person"></ion-icon></div>
-          <p>nekhrotic</p>
+          <div class="profile-icon small"></div>
+          <p class="username"><b>@nekhrotic</b></p>
         </div>
         <div class="profile-header">
-          <div class="profile-icon"><ion-icon name="person"></ion-icon></div>
+          <div class="profile-icon"></div>
           <div class="greeting">
-            <p>Good morning,</p>
-            <p>nekhrortic</p>
+            <p class="small">Good morning,</p>
+            <p class="username"><b>nekhrotic!</b></p>
           </div>
-          <button>New</button>
-          <button>Upload</button>
-          <button>Share</button>
+          <button>
+            <ion-icon name="add-circle" class="profile-button"></ion-icon>
+            <p>New Project</p>
+          </button>
+          <button>
+            <ion-icon name="terminal" class="profile-button"></ion-icon>
+            <p>Edit Projects</p>
+          </button>
+          <button>
+            <ion-icon name="newspaper" class="profile-button"></ion-icon>
+            <p>Tasks</p>
+          </button>
         </div>
       </div>
 
-      <div class="content"></div>
-      <div class="announcements"></div>
-      <div class="trending"></div>
+      <div class="content">
+        <p class="title">Projects</p>
+        <div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+          <div class="project">
+            <p>Title</p>
+            <p>description</p>
+          </div>
+        </div>
+      </div>
+      <div class="announcements">
+        <p class="title">Announcements</p>
+        <div>
+          <div>
+            <p>Site Maintenance</p>
+            <p>description</p>
+          </div>
+          <hr />
+          <div>
+            <p>Site Maintenance</p>
+            <p>description</p>
+          </div>
+          <hr />
+          <div>
+            <p>Site Maintenance</p>
+            <p>description</p>
+          </div>
+          <hr />
+          <div>
+            <p>Site Maintenance</p>
+            <p>description</p>
+          </div>
+        </div>
+      </div>
+      <div class="trending">
+        <p class="title">Trending Now</p>
+        <div>
+          <div>
+            <div class="profile-icon small"></div>
+            <div>
+              <p>@asd</p>
+              <p>Cool Project</p>
+            </div>
+          </div>
+          <div>
+            <div class="profile-icon small"></div>
+            <div>
+              <p>@asd</p>
+              <p>Cool Project</p>
+            </div>
+          </div>
+          <div>
+            <div class="profile-icon small"></div>
+            <div>
+              <p>@asd</p>
+              <p>Cool Project</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- icons/etc. -->
