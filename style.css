@@ -5,7 +5,12 @@
   --button-color: #ffd858;
   /* light mode */
   --background: #ffffff;
-  --bento-bg: #f2f2f2;
+  --bento-bg: linear-gradient(
+    180deg,
+    rgba(242, 242, 242, 1) 0%,
+    rgba(242, 242, 242, 1) 75%,
+    rgba(224, 224, 224, 1) 100%
+  );
   --bento-radius: 12px;
   --bento-padding: 22px;
   --bento-title-font: "IBM Plex Sans Condensed", sans-serif;
@@ -13,7 +18,12 @@
   --bento-font-color: #36363b;
   --bento-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   /* dark mode */
-  --background-dark: #26242b;
+  --background-dark: linear-gradient(
+    180deg,
+    rgba(38, 36, 43, 1) 0%,
+    rgba(38, 36, 43, 1) 62%,
+    rgba(47, 44, 39, 1) 100%
+  );
   --background-dark-2: #333038;
   --bento-bg-dark: #050505;
   --bento-font-color-dark: #e5e5eb;
@@ -48,17 +58,21 @@ ion-icon {
   padding: 0;
   text-decoration: none;
   margin: 0;
-  transition: all 0.25s ease;
   color: var(--bento-font-color);
 }
+
 hr {
   border: 1px dashed var(--bento-font-color);
+  margin: 12px 0px;
 }
 p.dark-mode,
 ul.dark-mode,
 li.dark-mode,
 ion-icon.dark-mode {
   color: var(--bento-font-color-dark);
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* MAIN */
@@ -75,27 +89,41 @@ ion-icon.dark-mode {
     background: var(--bento-bg);
     box-shadow: var(--bento-shadow);
     padding: var(--bento-padding);
+    padding-top: 0;
     border-radius: var(--bento-radius);
+    border: 2px solid white;
     > .title {
+      position: sticky;
+      top: 0;
+      padding-top: 22px;
+      background-color: #f2f2f2;
       font-family: var(--bento-title-font);
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 2px;
       padding-bottom: 22px;
     }
+    > .title.dark-mode {
+      background-color: #26242b;
+    }
   }
   > div.dark-mode {
     background: var(--background-dark);
+    border: 2px solid var(--background-dark-2);
   }
   .profile-icon {
     height: 62px;
     width: 62px;
     border-radius: 50%;
     background: #ffd858;
+    overflow: hidden;
   }
   .profile-icon.small {
     height: 42px;
     width: 42px;
+  }
+  .light-mode:hover {
+    color: #fcbd37;
   }
   > .sidebar {
     grid-column: 1;
@@ -103,6 +131,7 @@ ion-icon.dark-mode {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 22px;
     .gitfolio {
       font-size: 28px;
       font-weight: bold;
@@ -118,6 +147,13 @@ ion-icon.dark-mode {
         align-items: center;
         gap: 8px;
       }
+      > li:hover {
+        > p,
+        ion-icon {
+          transition: transform 0.25s ease;
+          transform: translate(15px, 0px);
+        }
+      }
     }
   }
   > .header {
@@ -126,10 +162,21 @@ ion-icon.dark-mode {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    padding-top: 22px;
+    gap: 22px;
     > div {
       display: flex;
       gap: 12px;
       align-items: center;
+      > button {
+        transition: transform 0.15s ease, box-shadow 0.15s ease,
+          background 0.15s ease;
+      }
+      > button:hover {
+        background: #fcbd37;
+        transform: translate(0, -3px);
+        box-shadow: var(--bento-shadow);
+      }
     }
     .search {
       display: flex;
@@ -139,14 +186,25 @@ ion-icon.dark-mode {
       padding: 8px 12px;
       background: var(--background);
       border-radius: var(--bento-radius);
-      > p {
+      transition: box-shadow 0.15s ease;
+      > input {
         font-size: small;
+        border: none;
+        width: 100%;
         opacity: 70%;
+        background-color: transparent;
       }
+      > input:focus {
+        outline: none;
+      }
+    }
+    .search:hover {
+      box-shadow: var(--bento-shadow);
     }
     .search.dark-mode {
       background: var(--background-dark-2);
-      > ion-icon {
+      > ion-icon,
+      input {
         color: var(--bento-font-color-dark);
       }
     }
@@ -177,19 +235,47 @@ ion-icon.dark-mode {
         color: var(--background-dark-2);
       }
     }
+    > .profile-header,
+    .search-header {
+      > .profile-icon > img {
+        width: 100%;
+      }
+    }
   }
   > .content {
     grid-column: 2/4;
     grid-row: 2/5;
+    overflow: scroll;
     > div {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--bento-padding);
       grid-template-rows: masonry;
       > .project {
-        padding: var(--bento-padding);
         border-radius: var(--bento-radius);
         background: var(--background);
+        box-sizing: border-box;
+        overflow: hidden;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        > a {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          > img {
+            width: 100%;
+          }
+          > :nth-child(2) {
+            padding: 0px 22px;
+          }
+          > :nth-child(3) {
+            font-size: small;
+            padding: 0px 22px 22px 22px;
+          }
+        }
+      }
+      > .project:hover {
+        transform: translate(0, -10px);
+        box-shadow: var(--bento-shadow);
       }
       > .project.dark-mode {
         background: var(--background-dark-2);
@@ -198,17 +284,35 @@ ion-icon.dark-mode {
   }
   > .announcements {
     grid-column: 4/5;
-    grid-row: 2/4;
+    grid-row: 2/3;
+    overflow: scroll;
+    .info {
+      font-size: small;
+    }
+    .info-title {
+      padding-bottom: 12px;
+    }
   }
   > .trending {
+    grid-column: 4/5;
+    grid-row: 3/5;
+    overflow: scroll;
     > div {
       display: flex;
       flex-direction: column;
       gap: 18px;
+      font-size: small;
       > div {
         display: flex;
         align-items: center;
         gap: 12px;
+        transition: transform 0.25s ease;
+        > div > img {
+          width: 100%;
+        }
+      }
+      > div:hover {
+        transform: translate(15px, 0px);
       }
     }
   }

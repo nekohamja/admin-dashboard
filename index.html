@@ -15,7 +15,7 @@
     <div class="bento-grid">
       <div class="sidebar">
         <div>
-          <p class="gitfolio">Gitfolio</p>
+          <p class="gitfolio">Gitfolio!</p>
           <ul>
             <li>
               <ion-icon name="home" size="large"></ion-icon>
@@ -54,20 +54,28 @@
           </li>
         </ul>
       </div>
-
       <div class="header">
         <div class="search-header">
           <div class="search">
             <ion-icon name="search" class="search-icon"></ion-icon>
-            <p>Search topics...</p>
+            <input
+              id="search"
+              type="text"
+              name="search"
+              placeholder="Search topics..."
+            />
           </div>
           <ion-icon name="moon" class="light-mode"></ion-icon>
           <ion-icon name="notifications"></ion-icon>
-          <div class="profile-icon small"></div>
+          <div class="profile-icon small">
+            <img src="assets/nekhrotic.png" alt="" />
+          </div>
           <p class="username"><b>@nekhrotic</b></p>
         </div>
         <div class="profile-header">
-          <div class="profile-icon"></div>
+          <div class="profile-icon">
+            <img src="assets/nekhrotic.png" alt="" />
+          </div>
           <div class="greeting">
             <p class="small">Good morning,</p>
             <p class="username"><b>nekhrotic!</b></p>
@@ -91,52 +99,96 @@
         <p class="title">Projects</p>
         <div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a href="https://braillify.streamlit.app" target="_blank">
+              <img src="assets/braillify.png" alt="" />
+              <p><b>Braillify</b></p>
+              <p>
+                Grade 1 Braille symbols detection + text to speech using YOLOv5
+                and VOLOv8 algorithm
+              </p>
+            </a>
           </div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a
+              href="https://nekohamja.github.io/rock-paper-scissors-js/"
+              target="_blank"
+            >
+              <img src="assets/rock-paper-scissors.png" alt="" />
+              <p><b>Rock Paper Scissors!</b></p>
+              <p>Rock Paper Scissors web game using vanilla JS.</p>
+            </a>
           </div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a href="https://nekohamja.github.io/sign-up-form/" target="_blank">
+              <img src="assets/sign-up-page.png" alt="" />
+              <p><b>Sign-Up Form</b></p>
+              <p>Sample imaginary service sign-up form handle using JS.</p>
+            </a>
           </div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a
+              href="https://nekohamja.github.io/pixel-drawer-web-app/"
+              target="_blank"
+            >
+              <img src="assets/pixel-drawer.png" alt="" />
+              <p><b>Pixel Drawer</b></p>
+              <p>Pixel Drawer web app using vanilla JS.</p>
+            </a>
           </div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a
+              href="https://nekohamja.github.io/calculator-web-app/"
+              target="_blank"
+            >
+              <img src="assets/calculator.png" alt="" />
+              <p><b>Calculator</b></p>
+              <p>Calculator web app done using HTML/CSS/JS.</p>
+            </a>
           </div>
           <div class="project">
-            <p>Title</p>
-            <p>description</p>
+            <a
+              href="https://nekohamja.github.io/sample-landing-page/"
+              target="_blank"
+            >
+              <img src="assets/bakery-page.png" alt="" />
+              <p><b>Bakery Landing Page</b></p>
+              <p>sample landing page done using CSS Flexbox approach.</p>
+            </a>
           </div>
         </div>
       </div>
       <div class="announcements">
         <p class="title">Announcements</p>
         <div>
-          <div>
-            <p>Site Maintenance</p>
-            <p>description</p>
+          <div class="info">
+            <p class="info-title">Site Maintenance</p>
+            <p>
+              Gitfolio will have a scheduled maintenance at 4am (GMT 8:00), we
+              are hereby sorry for the said inconvenience.
+            </p>
           </div>
           <hr />
-          <div>
-            <p>Site Maintenance</p>
-            <p>description</p>
+          <div class="info">
+            <p class="info-title">v2.0 Major Update</p>
+            <p>
+              Our Major Update includes tons of new features and bug fixes.
+              Check out for more details...
+            </p>
           </div>
           <hr />
-          <div>
-            <p>Site Maintenance</p>
-            <p>description</p>
+          <div class="info">
+            <p class="info-title">Community Share Day</p>
+            <p>
+              We are calling all devs to showcase some of their work and win
+              tons of prizes...
+            </p>
           </div>
           <hr />
-          <div>
-            <p>Site Maintenance</p>
-            <p>description</p>
+          <div class="info">
+            <p class="info-title">Updated Privacy Policy</p>
+            <p>
+              Our Privacy Policy is updated to ensure a healthy community...
+            </p>
           </div>
         </div>
       </div>
@@ -144,24 +196,57 @@
         <p class="title">Trending Now</p>
         <div>
           <div>
-            <div class="profile-icon small"></div>
+            <div class="profile-icon small">
+              <img src="assets/burger.jpg" alt="" />
+            </div>
             <div>
-              <p>@asd</p>
-              <p>Cool Project</p>
+              <p>@hamburger</p>
+              <p>AI Art Dematerializer</p>
             </div>
           </div>
           <div>
-            <div class="profile-icon small"></div>
+            <div class="profile-icon small">
+              <img src="assets/snailshouse.jpg" alt="" />
+            </div>
             <div>
-              <p>@asd</p>
-              <p>Cool Project</p>
+              <p>@snailhouse</p>
+              <p>Repository Chatbot</p>
             </div>
           </div>
           <div>
-            <div class="profile-icon small"></div>
+            <div class="profile-icon small">
+              <img src="assets/nyarons.jpg" alt="" />
+            </div>
             <div>
-              <p>@asd</p>
-              <p>Cool Project</p>
+              <p>@nyarons</p>
+              <p>YT to pdf Downloader</p>
+            </div>
+          </div>
+          <div>
+            <div class="profile-icon small">
+              <img src="assets/samdoesarts.jpg" alt="" />
+            </div>
+            <div>
+              <p>@samdoescode</p>
+              <p>CSS Beginner tutorial</p>
+            </div>
+          </div>
+          <div>
+            <div class="profile-icon small">
+              <img src="assets/charess.jpg" alt="" />
+            </div>
+            <div>
+              <p>@charess</p>
+              <p>AI Cosplayer</p>
+            </div>
+          </div>
+          <div>
+            <div class="profile-icon small">
+              <img src="assets/samdoesarts.jpg" alt="" />
+            </div>
+            <div>
+              <p>@samdoescode</p>
+              <p>JavaScript Beginner tutorial</p>
             </div>
           </div>
         </div>
